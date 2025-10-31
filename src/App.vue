@@ -1,10 +1,7 @@
 <script setup></script>
-<contact-us></contact-us>
-<!-- <template>
-  <h1 class="text-3xl font-bold text-blue-600">Hello Tailwind + Vue 🎉</h1>
-</template> -->
 
 <template>
+  <contact-us></contact-us>
     <h1 class="text-3xl font-bold text-blue-600">Hello Tailwind + Vue 🎉</h1>
 
   <h1>You did it!</h1>
