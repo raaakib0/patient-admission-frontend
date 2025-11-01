@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="bg-info">
 <h1>Contact Us</h1>
 <p>please sent an emil to abc@gmail.comn</p>
     </div>
