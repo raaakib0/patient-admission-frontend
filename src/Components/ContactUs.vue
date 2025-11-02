@@ -10,6 +10,12 @@
           this info for {{ ownername }}
         </p>
       </div>
+      <div class="col-3">
+<!-- <p>isFavourite : {{ isFavourite }}</p> -->
+ <button :class="[isFavorite? 'btn btn-warning': 'btn btn-success']" >
+  {{ isFavourite? 'Remove From' : 'Add to' }} Favorite
+ </button>
+      </div>
     </div>
   </div>
 </template>

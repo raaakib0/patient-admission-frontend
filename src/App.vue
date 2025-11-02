@@ -37,7 +37,7 @@ const contacts = reactive([
     name: "karim",
     phone: 1911111111,
     ownername: ownername.value,
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     name: "jabaar",
