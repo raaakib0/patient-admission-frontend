@@ -1,7 +1,7 @@
 <template>
   <!-- <contact-us></contact-us> -->
   <!-- <button-counter></button-counter> -->
-   Contact Owner Name : <input v-model="ownername"/>
+  Contact Owner Name : <input v-model="ownername" />
   <div class="row">
     <div class="col-12" v-for="contact in contacts" :key="contact.name">
       <ContactUs
@@ -10,7 +10,7 @@
         :ownername="contact.ownername"
         :email="contact.email"
         :isFavorite="contact.isFavorite"
-        @update-favorite="contact.isFavorite = !contact.isFavorite"
+        @update-favorite="contact.isFavorite = onUpdateFavorite($event) "
       ></ContactUs>
     </div>
   </div>
@@ -47,6 +47,11 @@ const contacts = reactive([
     isFavorite: false,
   },
 ]);
+
+function onUpdateFavorite(isFavoriteFromChildComponent){
+  return isFavoriteFromChildComponent;
+}
+
 </script>
 
 <style scoped></style>
