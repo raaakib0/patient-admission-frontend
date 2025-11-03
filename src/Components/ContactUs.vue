@@ -33,8 +33,11 @@ const props = defineProps({
   isFavourite: Boolean,
 });
 
+const emit = defineEmits(["update-favorite"]);
+
 function toggleFavorite(){
-  props.isFavourite = !props.isFavourite;
+  // props.isFavourite = !props.isFavourite;
+emit("update-favorite")
 }
 
 </script>

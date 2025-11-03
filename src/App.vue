@@ -10,6 +10,7 @@
         :ownername="contact.ownername"
         :email="contact.email"
         :isFavorite="contact.isFavorite"
+        @update-favorite="contact.isFavorite = !contact.isFavorite"
       ></ContactUs>
     </div>
   </div>
