@@ -36,8 +36,8 @@ const props = defineProps({
 
 const emit = defineEmits(["update-favorite"]);
 
-function toggleFavorite() {
-  // props.isFavourite = !props.isFavourite;
-  emit("update-favorite", {isFavorite: props.isFavourite, name: props.name});
-}
+// function toggleFavorite() {
+//   // props.isFavourite = !props.isFavourite;
+//   emit("update-favorite", {isFavorite: props.isFavourite, name: props.name});
+// }
 </script>
