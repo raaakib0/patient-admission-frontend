@@ -11,6 +11,7 @@
         :ownername="contact.ownername"
         :email="contact.email"
         :isFavorite="contact.isFavorite"
+        :maxLuckyNumber = "maxNumber"
         @update-favorite="contact.isFavorite = onUpdateFavorite($event, contact.phone) "
       ></ContactUs>
     </div>
@@ -28,6 +29,7 @@ import ButtonCounter from "./Components/ButtonCounter.vue";
 import AddContact from "./Components/AddContact.vue";
 import { reactive, ref } from "vue";
 const ownername = ref("abcd");
+const maxNumber = ref(100);
 const contacts = reactive([
   {
     name: "rahim",
