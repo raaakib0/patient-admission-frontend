@@ -37,8 +37,8 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-
+import { reactive, defineEmits } from "vue";
+const emit = defineEmits(["add-contact"]);
 const contact = reactive({
   name: "",
   phone: "",
@@ -46,6 +46,11 @@ const contact = reactive({
 });
 
 function addContact() {
+    emit("add-contact",{
+        name: contact.name,
+        email: contact.email,
+        phone: contact.phone,
+    });
   console.log(contact);
   contact.name = "";
   contact.email = "";
