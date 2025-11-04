@@ -15,7 +15,6 @@
       ></ContactUs>
     </div>
   </div>
-<LuckyNumber :maxNumber="10"></LuckyNumber>
   <ButtonCounter></ButtonCounter>
 
   <h1 class="text-3xl font-bold text-blue-600">Hello Tailwind + Vue 🎉</h1>
@@ -27,9 +26,7 @@
 import ContactUs from "./Components/ContactUs.vue";
 import ButtonCounter from "./Components/ButtonCounter.vue";
 import AddContact from "./Components/AddContact.vue";
-import LuckyNumber from "./Components/LuckyNumber2.vue"
 import { reactive, ref } from "vue";
-import LuckyNumber2 from "./Components/LuckyNumber2.vue";
 const ownername = ref("abcd");
 const contacts = reactive([
   {
