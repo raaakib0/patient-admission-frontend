@@ -1,26 +1,29 @@
 <template>
-  <!-- <contact-us></contact-us> -->
-  <!-- <button-counter></button-counter> -->
-  Contact Owner Name : <input v-model="ownername" />
-  <AddContact @add-contact="onAddContact"></AddContact>
-  <div class="row">
-    <div class="col-12" v-for="contact in contacts" :key="contact.name">
-      <ContactUs
-        :name="contact.name"
-        :phone="contact.phone"
-        :ownername="contact.ownername"
-        :email="contact.email"
-        :isFavorite="contact.isFavorite"
-        :maxLuckyNumber = "maxNumber"
-        @update-favorite="contact.isFavorite = onUpdateFavorite($event, contact.phone) "
-      ></ContactUs>
+  <div class="bg-black text pt-3" :style="{ height: '100vh' }">
+    <h1>ConcoPedia</h1>
+    <div class="col-6 text-end">
+      Max Lucky Number : <input v-model.number="maxNumber" />
     </div>
+
+    Contact Owner Name : <input v-model="ownername" />
+    <AddContact @add-contact="onAddContact"></AddContact>
+    <div class="row">
+      <div class="col-12" v-for="contact in contacts" :key="contact.name">
+        <ContactUs
+          :name="contact.name"
+          :phone="contact.phone"
+          :ownername="contact.ownername"
+          :email="contact.email"
+          :isFavorite="contact.isFavorite"
+          :maxLuckyNumber="maxNumber"
+          @update-favorite="
+            contact.isFavorite = onUpdateFavorite($event, contact.phone)
+          "
+        ></ContactUs>
+      </div>
+    </div>
+    <ButtonCounter></ButtonCounter>
   </div>
-  <ButtonCounter></ButtonCounter>
-
-  <h1 class="text-3xl font-bold text-blue-600">Hello Tailwind + Vue 🎉</h1>
-
-  <h1>You did it!</h1>
 </template>
 
 <script setup>
@@ -51,18 +54,17 @@ const contacts = reactive([
   },
 ]);
 
-function onAddContact(contact){
+function onAddContact(contact) {
   contact.ownername = ownername.value;
-  contact.isFavorite= false;
+  contact.isFavorite = false;
   contact.push(contact);
 }
 
-function onUpdateFavorite(oldValueFromChildComponent, phoneNumberFromParent){
+function onUpdateFavorite(oldValueFromChildComponent, phoneNumberFromParent) {
   console.log(oldValueFromChildComponent);
   console.log(phoneNumberFromParent);
   return !oldValueFromChildComponent.isFavorite;
 }
-
 </script>
 
 <style scoped></style>
