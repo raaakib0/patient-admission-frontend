@@ -15,7 +15,7 @@
       ></ContactUs>
     </div>
   </div>
-<LuckyNumber></LuckyNumber>
+<LuckyNumber :maxNumber="10"></LuckyNumber>
   <ButtonCounter></ButtonCounter>
 
   <h1 class="text-3xl font-bold text-blue-600">Hello Tailwind + Vue 🎉</h1>
