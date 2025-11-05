@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black text pt-3" :style="{ height: '100vh' }">
-    <h1>ConcoPedia</h1>
-    <div class="col-6 text-end">
+    <h1 class="text-center text- success">ConcoPedia</h1>
+    <div class="col-6 text-end text-white">
       Max Lucky Number : <input v-model.number="maxNumber" />
     </div>
 
@@ -15,7 +15,7 @@
           :ownername="contact.ownername"
           :email="contact.email"
           :isFavorite="contact.isFavorite"
-          :maxLuckyNumber="maxNumber"
+          <!-- :maxLuckyNumber="maxNumber" -->
           @update-favorite="
             contact.isFavorite = onUpdateFavorite($event, contact.phone)
           "
@@ -30,9 +30,10 @@
 import ContactUs from "./Components/ContactUs.vue";
 import ButtonCounter from "./Components/ButtonCounter.vue";
 import AddContact from "./Components/AddContact.vue";
-import { reactive, ref } from "vue";
+import { provide, reactive, ref } from "vue";
 const ownername = ref("abcd");
 const maxNumber = ref(100);
+provide("maxLuckyNumber", maxNumber);
 const contacts = reactive([
   {
     name: "rahim",

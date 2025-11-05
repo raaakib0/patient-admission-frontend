@@ -21,7 +21,8 @@
       </div>
       
       <div class="col-3">
-<LuckyNumber :maxNumber="maxLuckyNumber"></LuckyNumber>
+<!-- <LuckyNumber :maxNumber="maxLuckyNumber"></LuckyNumber> -->
+<LuckyNumber></LuckyNumber>
 
       </div>
     </div>
@@ -39,7 +40,7 @@ const props = defineProps({
   ownername: String,
   email: { type: String, require: false, default: "N/A" },
   isFavourite: Boolean,
-  maxLuckyNumber: Number,
+  // maxLuckyNumber: Number,
 });
 
 const emit = defineEmits(["update-favorite"]);
