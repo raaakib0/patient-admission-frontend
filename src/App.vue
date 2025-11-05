@@ -6,7 +6,7 @@
     </div>
 
     Contact Owner Name : <input v-model="ownername" />
-    <AddContact @add-contact="onAddContact"></AddContact>
+    <AddContact :onAddContact = "onAddContact"></AddContact>
     <div class="row">
       <div class="col-12" v-for="contact in contacts" :key="contact.name">
         <ContactUs
@@ -15,7 +15,6 @@
           :ownername="contact.ownername"
           :email="contact.email"
           :isFavorite="contact.isFavorite"
-          <!-- :maxLuckyNumber="maxNumber" -->
           @update-favorite="
             contact.isFavorite = onUpdateFavorite($event, contact.phone)
           "
