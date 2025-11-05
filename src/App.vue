@@ -2,10 +2,24 @@
   <div class="bg-black text pt-3" :style="{ height: '100vh' }">
     <h1 class="text-center text- success">ConcoPedia</h1>
     <div class="container">
-<LuckyNumberV1></LuckyNumberV1>
-<br/>
-<LuckyNumberV2></LuckyNumberV2>
-
+      <button
+        class="btn btn-primary text-black m-2"
+        @click="newVersion = !newVersion"
+      >
+        Toggle Component
+      </button>
+      <br />
+      <button
+        class="btn btn-primary text-black m-2"
+        @click="newVersion = false"
+      >
+        Lucky Number V1
+      </button>
+      <button class="btn btn-primary text-black m-2" @click="newVersion = true">
+        Lucky Number V2
+      </button>
+      <br />
+      <component :is="currentComponenet" />
     </div>
     <ButtonCounter></ButtonCounter>
   </div>
@@ -13,9 +27,15 @@
 
 <script setup>
 import ButtonCounter from "./Components/ButtonCounter.vue";
-import { provide, reactive, ref } from "vue";
+import { computed, provide, reactive, ref } from "vue";
 import LuckyNumberV1 from "./Components/LuckyNumberV1.vue";
 import LuckyNumberV2 from "./Components/LuckyNumberV2.vue";
+
+const newVersion = ref(false);
+
+const currentComponenet = computed(() => {
+  return newVersion.value ? LuckyNumberV2 : LuckyNumberV1;
+});
 </script>
 
 <style scoped></style>
