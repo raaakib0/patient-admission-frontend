@@ -7,7 +7,7 @@
     <button class="btn btn-danger text-black" @click="genereateLuckyNumber">
       <span v-if="luckyNumber === 0">
         Generate Lucky Number <br />
-        Range(1-100)
+        Range(1-{{maxNumber}})
       </span>
       <span v-else >
         Lucky Number: {{ luckyNumber }} <br/> 
@@ -20,9 +20,9 @@
 <script setup>
 import { ref, } from "vue";
 let luckyNumber = ref(0);
-
+const maxNumber = ref(100);
 function genereateLuckyNumber() {
-  luckyNumber.value = Math.floor(Math.random() * 100);
+  luckyNumber.value = Math.floor(Math.random() * maxNumber.value);
   console.log(luckyNumber.value);
 }
 </script>
