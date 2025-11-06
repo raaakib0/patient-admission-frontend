@@ -3,7 +3,7 @@
     <h1 class="text-center text- success">LearnSlots</h1>
     <div class="container text center bg-white">
         <slot>
-            
+
         </slot>
       <button
         class="btn btn-primary text-black m-2"
@@ -12,6 +12,7 @@
         Toggle Component
       </button>
       <br />
+      <slot name="moreInfo"></slot>
       <button
         class="btn btn-primary text-black m-2"
         @click="newVersion = false"
@@ -22,7 +23,7 @@
         Lucky Number V2
       </button>
       <br />
-
+<slot name="learnSlot"></slot>
       <KeepAlive :include="['LuckyNumberV1','LuckyNumberV2']">
         <component :is="currentComponenet" class="border" />
       </KeepAlive>
