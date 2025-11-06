@@ -45,4 +45,10 @@ const currentComponenet = computed(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+h1{ 
+    background-color: greenyellow;
+}
+
+</style>
+
