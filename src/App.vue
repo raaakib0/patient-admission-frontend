@@ -3,8 +3,10 @@
 </template>
 
 <script setup>
-import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated } from 'vue';
+import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref } from 'vue';
 import ButtonCounter from './Components/ButtonCounter.vue';
+
+const message =ref("Hello")
 
 onBeforeMount(()=>{
   console.log("onBeforemount - App.vue");
