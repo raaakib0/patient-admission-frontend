@@ -1,33 +1,28 @@
 <template>
-  <LuckyNumberPareantComponent>
-    <template v-slot:default>
-      <p class="P-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, fugiat
-        dolo
-      </p>
-      <hr />
-    </template>
-    <template v-slot:moreInfo>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, fugiat
-        dolo
-      </p>
-    </template>
-
-    <template v-slot:learnSlot>
-      <button @click="showMessage">what will we lern?</button>
-      <h4 class="text-success">{{ message }}</h4>
-    </template>
-  </LuckyNumberPareantComponent>
+ <ButtonCounter/>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import LuckyNumberPareantComponent from "./Components/LuckyNumberPareantComponent.vue";
+import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated } from 'vue';
+import ButtonCounter from './Components/ButtonCounter.vue';
 
-const message = ref("");
+onBeforeMount(()=>{
+  console.log("onBeforemount - App.vue");
+});
+onMounted(()=>{
+  console.log('onMounted - App.vue');
+});
+onBeforeUpdate(()=>{
+  console.log("onBeforeUpdate - App.vue");
+});
+onUpdated(()=>{
+  console.log('onUpdated - App.vue');
+});
+onBeforeUnmount(()=>{
+  console.log('onBeforeUnmount - App.vue');
+});
+onUnmounted(()=>{
+  console.log('onUnmounted - App.vue');
+});
 
-function showMessage() {
-  message.value = "how to use slots";
-}
 </script>
