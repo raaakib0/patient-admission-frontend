@@ -1,7 +1,10 @@
 <template>
   <div class="bg-black text pt-3" :style="{ height: '100vh' }">
-    <h1 class="text-center text- success">ConcoPedia</h1>
-    <div class="container">
+    <h1 class="text-center text- success">LearnSlots</h1>
+    <div class="container text center bg-white">
+        <slot>
+            
+        </slot>
       <button
         class="btn btn-primary text-black m-2"
         @click="newVersion = !newVersion"
@@ -21,7 +24,7 @@
       <br />
 
       <KeepAlive :include="['LuckyNumberV1','LuckyNumberV2']">
-        <component :is="currentComponenet" />
+        <component :is="currentComponenet" class="border" />
       </KeepAlive>
     </div>
     <ButtonCounter></ButtonCounter>
@@ -29,7 +32,7 @@
 </template>
 
 <script setup>
-import ButtonCounter from "./Components/ButtonCounter.vue";
+import ButtonCounter from "./ButtonCounter.vue";
 import { computed, provide, reactive, ref } from "vue";
 import LuckyNumberV1 from "./LuckyNumberV1.vue";
 import LuckyNumberV2 from "./LuckyNumberV2.vue";
