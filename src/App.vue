@@ -19,7 +19,10 @@
         Lucky Number V2
       </button>
       <br />
-      <component :is="currentComponenet" />
+
+      <KeepAlive>
+        <component :is="currentComponenet" />
+      </KeepAlive>
     </div>
     <ButtonCounter></ButtonCounter>
   </div>
