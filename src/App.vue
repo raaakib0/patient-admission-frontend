@@ -4,15 +4,8 @@
 </template>
 
 <script setup>
+import { useCounter } from './composibles/useCounter';
 
-const count = ref(10);
-
-const increment = ()=>{
-  count.value++;
-};
-
-const decrement = ()=>{
-  count.value--;
-};
+const {count, increment, decrement} = useCounter();
 
 </script>
