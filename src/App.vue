@@ -1,4 +1,6 @@
 <template>
+  <h1>Hello vue</h1>
+  <Button @click="showMessage">Show Message</Button>
  <ButtonCounter/>
 </template>
 
@@ -6,7 +8,12 @@
 import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref } from 'vue';
 import ButtonCounter from './Components/ButtonCounter.vue';
 
-const message =ref("Hello")
+const message =ref("Hello Vue");
+const showMessage = () =>{
+  message.value = "Hello from function";
+};
+
+const count = ref(0);
 
 onBeforeMount(()=>{
   console.log("onBeforemount - App.vue");
