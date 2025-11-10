@@ -19,7 +19,8 @@
           </a>
           <ul class="dropdown-menu">
             <li><router-link class="dropdown-item" to="/contact">Contact Us</router-link></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><router-link class="dropdown-item" to="productList">Product List</router-link></li>
+            <!-- <li><router-link class="dropdown-item" to="productList">Product Details</router-link></li> -->
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
