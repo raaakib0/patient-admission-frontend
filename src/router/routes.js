@@ -13,3 +13,5 @@ routes: [
     {path: "/product/:productId", component: ProductDetails }
 ],
 });
+
+export default router;
