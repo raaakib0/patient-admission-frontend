@@ -3,7 +3,7 @@
     <h1>Products List</h1>
     <p>here is the list of products:</p>
     <div v-for="product in products">
-      <router-link :to="`/product/${product.id}`">{{ product.name }}</router-link>
+      <router-link :to="{name:'productDetails', params:{productId:product.id}}">{{ product.name }}</router-link>
     </div>
   </div>
 </template>

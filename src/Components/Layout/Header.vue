@@ -35,7 +35,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <router-link class="dropdown-item" to="/contact"
+                <router-link class="dropdown-item" :to="{name: 'contact'}"
                   >Contact Us</router-link
                 >
               </li>

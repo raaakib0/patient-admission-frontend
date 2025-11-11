@@ -8,9 +8,11 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         { path: "/", component: HomePage },
-        { path: "/contact", component: Contact },
+        { path: "/contact-us", component: Contact, name: 'contact' },
         { path: "/productList", component: ProductList },
-        { path: "/product/:productId/:categoryId?", component: ProductDetails },
+        { path: "/product/:productId/:categoryId?", component: ProductDetails, name: 
+            'productDetails', props: true
+         },
         { path: "/product", component: ProductDetails }
     ],
 });
