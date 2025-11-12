@@ -19,8 +19,20 @@ const router = createRouter({
                 'productDetails', props: true
         },
         { path: "/product", component: ProductDetails },
-        {path: "/:catchAll(.*)", component: NotFound},
+        { path: "/:catchAll(.*)", component: NotFound },
     ],
+});
+
+router.beforeEach((to, from) => {
+console.log("global before each");
+console.log(to,from);
+
+const isAuthenticated=true;
+if(!isAuthenticated && to.name !== 'login'){
+    return {name:'login'}
+}
+
+return true;
 });
 
 export default router;
