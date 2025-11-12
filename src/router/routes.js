@@ -12,7 +12,22 @@ const router = createRouter({
         { path: "/", component: HomePage },
         { path: "/contact-us", component: Contact, name: 'contact' },
         { path: '/contact', redirect: { name: 'contact' } },
-        { path: "/productList", component: ProductList },
+        {
+            path: "/productList",
+            component: ProductList,
+            name: 'productsList',
+            beforeEnter: (to, from) => {
+                console.log('before enter per route')
+                console.log(to, from);
+
+                const isAdmin = true;
+                if (isAdmin) {
+                    return true;
+                }
+
+                return false;
+            },
+        },
         { path: "/login", component: LogIn, name: "login" },
         {
             path: "/product/:productId/:categoryId?", component: ProductDetails, name:
@@ -24,15 +39,20 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
-console.log("global before each");
-console.log(to,from);
+    console.log("global before each");
+    console.log(to, from);
 
-const isAuthenticated=true;
-if(!isAuthenticated && to.name !== 'login'){
-    return {name:'login'}
-}
+    const isAuthenticated = true;
 
-return true;
+    if (to.name == 'home') {
+        return true;
+    }
+
+    if (!isAuthenticated && to.name !== 'login') {
+        return { name: 'login' }
+    }
+
+    return true;
 });
 
 export default router;
