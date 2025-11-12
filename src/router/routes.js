@@ -1,10 +1,29 @@
 import LogIn from "@/Components/Authentication/LogIn.vue";
 import Contact from "@/Components/Home/Contact.vue";
 import HomePage from "@/Components/Home/HomePage.vue";
+import NoAccess from "@/Components/Layout/NoAccess.vue";
 import NotFound from "@/Components/Layout/NotFound.vue";
 import ProductDetails from "@/Components/Product/ProductDetails.vue";
 import ProductList from "@/Components/Product/ProductList.vue";
 import { createRouter, createWebHistory } from "vue-router";
+
+function isAdmin(){
+    const isAdmin = true;
+                if (isAdmin) {
+                    return true;
+                }
+
+                return {name: NoAccess};
+}
+
+function isAuthenticated(){
+    const isAuthenticated = true;
+    if(isAuthenticated){
+        return true;
+    }
+
+    return false;
+}
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,17 +35,7 @@ const router = createRouter({
             path: "/productList",
             component: ProductList,
             name: 'productsList',
-            beforeEnter: (to, from) => {
-                console.log('before enter per route')
-                console.log(to, from);
-
-                const isAdmin = true;
-                if (isAdmin) {
-                    return true;
-                }
-
-                return false;
-            },
+            beforeEnter: [isAdmin, isAuthenticated],
         },
         { path: "/login", component: LogIn, name: "login" },
         {
