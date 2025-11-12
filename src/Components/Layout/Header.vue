@@ -50,7 +50,7 @@
                 >
               </li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><router-link class="dropdown-item" to="login">Log In</router-link></li>
             </ul>
           </li>
           <li class="nav-item">
