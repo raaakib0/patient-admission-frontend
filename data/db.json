@@ -1,0 +1,46 @@
+{
+"destination": [
+  {
+    "ID": 101,
+    "Name": "New York City, USA",
+    "Days": 4,
+    "FunFact": "It was briefly the capital of the United States from 1785 to 1790.",
+    "Price_USD": 1600
+  },
+  {
+    "ID": 102,
+    "Name": "Santorini, Greece",
+    "Days": 7,
+    "FunFact": "The island is still an active volcano, though the last major eruption was in 1950.",
+    "Price_USD": 2100
+  },
+  {
+    "ID": 103,
+    "Name": "Hanoi, Vietnam",
+    "Days": 5,
+    "FunFact": "The Old Quarter's streets are named after the goods that were historically sold there.",
+    "Price_USD": 900
+  },
+  {
+    "ID": 104,
+    "Name": "The Serengeti, Tanzania",
+    "Days": 6,
+    "FunFact": "The Great Migration sees over 1.5 million wildebeest move across the plains.",
+    "Price_USD": 3500
+  },
+  {
+    "ID": 105,
+    "Name": "London, UK",
+    "Days": 3,
+    "FunFact": "Big Ben is the name of the bell, not the clock tower itself (which is the Elizabeth Tower).",
+    "Price_USD": 1450
+  },
+  {
+    "ID": 106,
+    "Name": "Dubai, UAE",
+    "Days": 5,
+    "FunFact": "It has the world's longest automated metro network.",
+    "Price_USD": 1950
+  }
+]
+}
