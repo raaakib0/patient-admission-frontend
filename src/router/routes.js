@@ -1,4 +1,4 @@
-import LogIn from "@/Components/Authentication/LogIn.vue";
+import LogIn from "@/Components/Authentication/Login.vue";
 import Contact from "@/Components/Home/Contact.vue";
 import HomePage from "@/Components/Home/HomePage.vue";
 import NoAccess from "@/Components/Layout/NoAccess.vue";
@@ -13,7 +13,7 @@ function isAdmin(){
                     return true;
                 }
 
-                return {name: NoAccess};
+                return {name: "noaccess"};
 }
 
 function isAuthenticated(){
@@ -31,6 +31,7 @@ const router = createRouter({
         { path: "/", component: HomePage },
         { path: "/contact-us", component: Contact, name: 'contact' },
         { path: '/contact', redirect: { name: 'contact' } },
+        {path: '/noaccess', component: NoAccess, name: 'noaccess'},
         {
             path: "/productList",
             component: ProductList,
@@ -45,6 +46,7 @@ const router = createRouter({
         { path: "/product", component: ProductDetails },
         { path: "/:catchAll(.*)", component: NotFound },
     ],
+    linkActiveClass: "active btn btn-primary",
 });
 
 router.beforeEach((to, from) => {
