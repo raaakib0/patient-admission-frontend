@@ -1,67 +1,26 @@
 <template>
-  <div v-if="destinationObj.isLoading" class="d-flex justify-content-center">
-    <Loader></Loader>
-  </div>
-  <div class="container p-4 bg-white">
-    <div><h1 class="text-success text-center">Travelopedia</h1></div>
+  <header>
+    <div class="text-center pt-3 text-success h3">Concopedia</div>
     <hr />
-    <table class="table table-striped table-light">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Days</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          class="table-light"
-          v-for="destination in destinationObj.destinationList"
-          :key="destination.ID"
+    <div class="row">
+      <div class="col-4 offset-1">
+        <router-link
+          to="/"
+          class="form-control badge rounded-pill text-bg-warning p-4"
         >
-          <td>{{ destination.Name }}</td>
-          <td>{{ destination.Days }}</td>
-          <td>{{ destination.Price_USD }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- <div v-for="destination in destinationObj.destinationList" :key="destination.ID">
-    <p>{{ user.name }}</p>
-    <p>{{ user.email }}</p>
-    <hr />
-  </div> -->
+          Home
+        </router-link>
+      </div>
+      <div class="col-4 offset-1">
+        <router-link
+          to="/info"
+          class="form-control badge rounded-pill text-bg-warning p-4"
+        >
+          Info
+        </router-link>
+      </div>
+    </div>
+  </header>
 </template>
 
-<script setup>
-import { onMounted, reactive } from "vue";
-import axios from "axios";
-
-const destinationObj = reactive({
-  destinationList: [],
-  isLoading: false,
-});
-
-onMounted(() => {
-  // fetch("https://jsonplaceholder.typicode.com/users")
-  // .then((response) => response.json())
-  // .then((data)=>{
-  //   console.log(data);
-  //   destinationObj.destinationList= data;
-  // });
-
-  loadDestination();
-});
-
-function loadDestination() {
-  destinationObj.isLoading = true;
-  axios.get("http://localhost:3000/destination").then((response) => {
-    new Promise((resolve) => setTimeout(resolve, 1000)).then(() => {
-      console.log(response.data);
-      destinationObj.destinationList = response.data;
-      destinationObj.isLoading = false;
-    });
-  });
-}
-</script>
+<script setup></script>
