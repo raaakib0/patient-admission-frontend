@@ -1,6 +1,8 @@
 <template>
-  <div>Requestopedia</div>
-  <div class="container p-4" >
+  <div>
+    <span class="loader"></span>
+  </div>
+  <div class="container p-4 bg-white" >
 <div><h1 class="text-success text-center" >Travelopedia</h1></div>
 <hr/>
 <table class="table table-striped table-light">
@@ -36,6 +38,7 @@ import axios from "axios";
 
 const destinationObj = reactive({
   destinationList: [],
+  isLoading: true,
 });
 
 onMounted(() => {
@@ -46,11 +49,37 @@ onMounted(() => {
   //   destinationObj.destinationList= data;
   // });
 
-  axios.get("http://localhost:3000/destination")
+loadDestination(); 
+});
+
+function loadDestination(){
+    axios.get("http://localhost:3000/destination")
   .then((response) => {
     console.log(response.data);
 
     destinationObj.destinationList = response.data;
   });
-});
+};
 </script>
+
+<style scoped>
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+</style>
