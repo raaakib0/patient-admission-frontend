@@ -5,7 +5,7 @@ export const useGameStore = defineStore("gameStore", {
         score: 10,
         maxHeat: 100,
         maxAttack: 30,
-        maxDefense: 100
+        maxDefense: 10
     }),
 
     getters: {
