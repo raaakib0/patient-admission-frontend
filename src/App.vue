@@ -20,7 +20,11 @@
         </router-link>
       </div>
     </div>
+    <HomePage></HomePage>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import HomePage from './Components/Home/HomePage.vue';
+
+</script>
