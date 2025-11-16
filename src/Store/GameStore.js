@@ -12,8 +12,11 @@ export const useGameStore = defineStore("gameStore", {
         getScore() {
             return this.score;
         },
+        getWinningScore(){
+            return this.maxHeat;
+        }
     },
-  
+
     actions: {
         setNextAttack() {
             let attack = Math.floor(Math.random() * this.maxAttack) + 1;
@@ -26,7 +29,7 @@ export const useGameStore = defineStore("gameStore", {
             this.score -= defense;
         }
     },
-  resetScore() {
+    resetScore() {
         this.score = 50;
     },
 })
