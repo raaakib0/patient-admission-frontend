@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 export const useGameStore = defineStore("gameStore", () => {
 
@@ -9,8 +9,8 @@ export const useGameStore = defineStore("gameStore", () => {
     const maxDefense = ref(10);
 
 
-    const getScore = computer(() => sore.value);
-    const getWinningScore = computer(() => maxHeat.value);
+    const getScore = computed(() => sore.value);
+    const getWinningScore = computed(() => maxHeat.value);
 
 
     setNextAttack = () => {
