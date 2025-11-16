@@ -28,11 +28,11 @@
 import { useGameStore } from "@/Store/GameStore";
 
 function Increment() {
-  gameStore.score += gameStore.getNextAttack;
+  gameStore.score += gameStore.setNextAttack;
 }
 
 function Decrement() {
-  gameStore.score -= gameStore.getNextDefense;
+  gameStore.score -= gameStore.setNextDefense;
 }
 
 function Random() {
